@@ -150,7 +150,7 @@ Before delegating to Task, consider using Amp's built-in tools directly:
 |------|---------------|-------------|
 | Architecture advice | `oracle` | Complex decisions, code review, debugging |
 | External research | `librarian` | Library docs, best practices, third-party APIs |
-| Semantic code search | `finder` | Finding implementations by concept |
+| Semantic code search | `Search` | Finding implementations by concept |
 | Exact pattern search | `Grep` | Known patterns, function calls |
 
 **Example: Before creating a Task for research**

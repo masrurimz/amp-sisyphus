@@ -1,6 +1,6 @@
 ---
 name: ultrawork
-description: Maximum performance mode using Amp's built-in oracle, librarian, and finder tools in parallel for comprehensive analysis. Activates when you need deep, multi-dimensional research across codebase and external docs.
+description: Maximum performance mode using Amp's built-in oracle, librarian, and Search tools in parallel for comprehensive analysis. Activates when you need deep, multi-dimensional research across codebase and external docs.
 ---
 
 # Ultrawork: Maximum Performance Mode
@@ -13,7 +13,7 @@ Activates **parallel execution** of Amp's most powerful built-in tools for compr
 |------|---------|----------|
 | `oracle` | Deep reasoning, architecture review | Expert analysis, code review |
 | `librarian` | External documentation research | Library docs, best practices |
-| `finder` | Semantic codebase search | Conceptual code discovery |
+| `Search` | Semantic codebase search | Conceptual code discovery |
 | `Grep` | Exact pattern matching | Fast, precise matches |
 | `glob` | File pattern discovery | Structure mapping |
 
@@ -26,7 +26,7 @@ Activates **parallel execution** of Amp's most powerful built-in tools for compr
 │  Launch in parallel:                                 │
 │                                                      │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐          │
-│  │  finder  │  │ librarian│  │  oracle  │          │
+│  │  Search  │  │ librarian│  │  oracle  │          │
 │  │(internal)│  │(external)│  │ (expert) │          │
 │  └────┬─────┘  └────┬─────┘  └────┬─────┘          │
 │       │             │             │                 │
@@ -48,9 +48,9 @@ Activates **parallel execution** of Amp's most powerful built-in tools for compr
 
 ```
 # Step 1: Parallel discovery
-finder("Find all authentication-related code")
-finder("Find all API endpoints")  
-finder("Find all database queries")
+Search("Find all authentication-related code")
+Search("Find all API endpoints")  
+Search("Find all database queries")
 
 # Step 2: Expert analysis
 oracle(
@@ -68,7 +68,7 @@ librarian(
 
 ```
 # Parallel internal search
-finder("How does the payment processing work?")
+Search("How does the payment processing work?")
 Grep("processPayment(", path="src")
 glob("**/payment*")
 
@@ -109,7 +109,7 @@ librarian(
 - "Deep dive into module X with external context"
 
 ❌ **Don't use for:**
-- Simple file searches (use finder directly)
+- Simple file searches (use Search directly)
 - Single-file edits (just edit it)
 - Tasks with clear, linear steps (use sisyphus)
 
@@ -117,7 +117,7 @@ librarian(
 
 ```
 1. [ ] Identify all dimensions to research
-2. [ ] Launch finder queries for internal code (parallel)
+2. [ ] Launch Search queries for internal code (parallel)
 3. [ ] Launch librarian queries for external docs (parallel)
 4. [ ] Collect results
 5. [ ] Call oracle for synthesis/review
@@ -129,7 +129,7 @@ librarian(
 ```markdown
 ## Ultrawork Analysis: [Topic]
 
-### Internal Findings (finder)
+### Internal Findings (Search)
 - Found X in [files...]
 - Pattern Y appears in [locations...]
 
@@ -153,12 +153,12 @@ librarian(
 ❌ Running tools sequentially when parallel is possible
 ❌ Skipping oracle for complex decisions
 ❌ Using Task for research (use librarian)
-❌ Guessing patterns (use finder for semantic search)
+❌ Guessing patterns (use Search for semantic search)
 
 ## The Ultrawork Mantra
 
 ```
 All tools, all dimensions, all at once.
-finder finds, librarian researches, oracle advises.
+Search finds, librarian researches, oracle advises.
 Synthesize into action.
 ```

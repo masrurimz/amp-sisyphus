@@ -1,6 +1,6 @@
 ---
 name: explorer
-description: Fast codebase search using Amp's finder tool for semantic search plus parallel Grep/glob for exact matches. Use when you need quick, comprehensive codebase reconnaissance.
+description: Fast codebase search using Amp's Search tool for semantic search plus parallel Grep/glob for exact matches. Use when you need quick, comprehensive codebase reconnaissance.
 ---
 
 # Explorer: Fast Codebase Search
@@ -11,22 +11,22 @@ Speed-optimized codebase search leveraging **Amp's built-in tools**.
 
 | Need | Use | Why |
 |------|-----|-----|
-| **Semantic/conceptual search** | `finder` | AI-powered, understands code meaning |
+| **Semantic/conceptual search** | `Search` | AI-powered, understands code meaning |
 | **Exact pattern match** | `Grep` | Fast regex, specific strings |
 | **File discovery** | `glob` | Pattern-based file finding |
 | **Read after locate** | `Read` | Get file contents |
 
-## Primary Tool: `finder`
+## Primary Tool: `Search`
 
-**USE FINDER FIRST** for most searches. It's Amp's semantic search that understands code:
+**USE SEARCH FIRST** for most searches. It's Amp's semantic search that understands code:
 
 ```
-finder("Where is the authentication middleware implemented?")
-finder("Find all API endpoints that handle user data")
-finder("How does the payment processing flow work?")
+Search("Where is the authentication middleware implemented?")
+Search("Find all API endpoints that handle user data")
+Search("How does the payment processing flow work?")
 ```
 
-### When finder excels:
+### When Search excels:
 - Finding implementations by concept
 - Locating code by functionality 
 - Understanding relationships between components
@@ -47,7 +47,7 @@ glob("**/*auth*")          # Files with auth in name
 
 ### Strategy 1: Semantic First
 ```
-1. finder("conceptual question")     # Let AI find it
+1. Search("conceptual question")     # Let AI find it
 2. Read(found_files)                 # Get details
 ```
 
@@ -62,7 +62,7 @@ glob("**/*FileName*")
 ### Strategy 3: Combined
 ```
 # Start semantic, refine with exact
-finder("authentication implementation")
+Search("authentication implementation")
 → Found auth.ts, middleware.ts
 Grep("validateToken", path="src/auth")  # Precise follow-up
 ```
@@ -71,10 +71,10 @@ Grep("validateToken", path="src/auth")  # Precise follow-up
 
 | Task | Best Approach |
 |------|---------------|
-| Find where X is implemented | `finder("where is X implemented")` |
+| Find where X is implemented | `Search("where is X implemented")` |
 | Find all usages of function | `Grep("functionName(")` parallel with import grep |
 | Find files by name pattern | `glob("**/*pattern*")` |
-| Understand code flow | `finder("how does X flow work")` |
+| Understand code flow | `Search("how does X flow work")` |
 | Find exact string | `Grep("exact string", literal=true)` |
 
 ## Output Format
@@ -91,14 +91,14 @@ Grep("validateToken", path="src/auth")  # Precise follow-up
 
 ## Anti-Patterns
 
-❌ Using Grep for conceptual searches (use finder)
+❌ Using Grep for conceptual searches (use Search)
 ❌ Sequential searches when parallel possible
 ❌ Reading files before finding them
-❌ Ignoring finder for complex searches
+❌ Ignoring Search for complex searches
 
 ## The Explorer Mantra
 
 ```
-finder for concepts, Grep for patterns.
+Search for concepts, Grep for patterns.
 Parallel execution, fast results.
 ```

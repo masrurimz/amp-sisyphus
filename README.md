@@ -10,22 +10,22 @@ Amp Sisyphus transforms Amp into a coordinated team of specialized agents that p
 
 ## Features
 
-- **9 Specialized Skills** - Integrated with Amp's built-in oracle, librarian, finder
+- **9 Specialized Skills** - Integrated with Amp's built-in oracle, librarian, Search
 - **Lifecycle Hooks** - Auto-continue, session recovery, verification reminders
 - **Persistent State** - Survives session boundaries via wisdom accumulation
 - **Magic Keywords** - `/ultrawork`, `/analyze`, `/git-master` triggers
 
 ## Built-in Tool Integration
 
-Amp Sisyphus leverages Amp's powerful built-in tools:
+Amp Sisyphus leverages Amp's powerful built-in tools and specialized subagents:
 
-| Amp Tool | How Sisyphus Uses It |
-|----------|---------------------|
-| `oracle` | Architecture decisions, code review, debugging (prometheus, sisyphus, analyze) |
-| `librarian` | External documentation research (prometheus, ultrawork) |
-| `finder` | Semantic codebase search (explorer, analyze, ultrawork) |
-| `Task` | Spawn specialist subagents (sisyphus orchestrator) |
-| `mermaid` | Visualize architecture and flows (analyze) |
+| Amp Tool/Subagent | Model | How Sisyphus Uses It |
+|-------------------|-------|---------------------|
+| `oracle` | GPT-5.1 | Architecture decisions, code review, debugging |
+| `librarian` | Claude Sonnet 4.5 | External documentation research |
+| `Search` | Gemini 3 Flash | Fast, semantic codebase retrieval |
+| `Task` | - | Spawn specialist subagents |
+| `mermaid` | - | Visualize architecture and flows |
 
 ## Installation
 
@@ -172,7 +172,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed mapping from origi
 | Runtime | Claude Code | Amp |
 | Agents | TypeScript classes | Amp Skills (SKILL.md) |
 | Hooks | Custom TS hooks | Amp hooks (JSON) |
-| LSP Tools | Custom implementation | Use Amp's finder/diagnostics |
+| LSP Tools | Custom implementation | Use Amp's Search/diagnostics |
 | AST Tools | ast-grep | Grep + patterns |
 | Persistence | .sisyphus/ JSON | .sisyphus/ + beads |
 

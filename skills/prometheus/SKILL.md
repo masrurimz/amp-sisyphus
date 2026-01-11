@@ -236,7 +236,7 @@ oracle(
 ```
 # In your planning workflow:
 1. Gather requirements from user
-2. Use `finder` to understand existing codebase
+2. Use `Search` to understand existing codebase
 3. Call `oracle` with architecture question + relevant files
 4. Document oracle's recommendation in plan
 5. Proceed with informed decision

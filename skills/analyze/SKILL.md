@@ -1,6 +1,6 @@
 ---
 name: analyze
-description: Deep module investigation using Amp's finder for discovery, oracle for expert analysis, and mermaid for visualization. Use when you need to understand complex code, prepare for refactoring, or debug issues.
+description: Deep module investigation using Amp's Search for discovery, oracle for expert analysis, and mermaid for visualization. Use when you need to understand complex code, prepare for refactoring, or debug issues.
 ---
 
 # Analyze: Deep Module Investigation
@@ -11,7 +11,7 @@ Comprehensive code analysis using **Amp's built-in tools**.
 
 | Tool | Purpose |
 |------|---------|
-| `finder` | Semantic search to discover relevant code |
+| `Search` | Semantic search to discover relevant code |
 | `oracle` | Expert analysis of architecture, patterns, issues |
 | `mermaid` | Visualize relationships and flows |
 | `Read` | Get full file contents |
@@ -26,7 +26,7 @@ Comprehensive code analysis using **Amp's built-in tools**.
 │                                                      │
 │  Phase 1: DISCOVERY                                  │
 │  ┌─────────────────────────────────────────────┐    │
-│  │ finder("how does [module] work?")           │    │
+│  │ Search("how does [module] work?")           │    │
 │  │ glob("[module]/**/*")                       │    │
 │  │ Grep("import.*from.*[module]")              │    │
 │  └─────────────────────────────────────────────┘    │
@@ -63,12 +63,12 @@ Comprehensive code analysis using **Amp's built-in tools**.
 
 ### Phase 1: Discovery
 
-Use `finder` for semantic search:
+Use `Search` for semantic search:
 
 ```
-finder("How does the authentication module work?")
-finder("What are the entry points for the payment system?")
-finder("Find all components that depend on UserContext")
+Search("How does the authentication module work?")
+Search("What are the entry points for the payment system?")
+Search("Find all components that depend on UserContext")
 ```
 
 Parallel with structural search:
@@ -213,7 +213,7 @@ Record findings in `.sisyphus/wisdom.md`:
 
 ```bash
 # Typical analyze session
-1. finder("how does X work")        # Discover
+1. Search("how does X work")        # Discover
 2. Read(found_files)                # Deep read
 3. oracle(analyze X, files=[...])   # Expert review
 4. mermaid(architecture)            # Visualize
@@ -230,6 +230,6 @@ Record findings in `.sisyphus/wisdom.md`:
 ## The Analyze Mantra
 
 ```
-finder discovers, oracle analyzes, mermaid visualizes.
+Search discovers, oracle analyzes, mermaid visualizes.
 Document everything. Build institutional knowledge.
 ```

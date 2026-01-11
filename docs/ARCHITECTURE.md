@@ -6,7 +6,15 @@ Port of [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisy
 
 ## Component Mapping
 
-### Amp Built-in Tools (USE DIRECTLY)
+### Amp Built-in Subagents (USE DIRECTLY)
+
+Amp has specialized subagents powered by different models:
+
+| Subagent | Model | Purpose | Used By Skills |
+|----------|-------|---------|----------------|
+| `oracle` | GPT-5.1 | Complex reasoning, architecture review, debugging | prometheus, sisyphus, ultrawork, analyze |
+| `librarian` | Claude Sonnet 4.5 | External documentation, library research | prometheus, ultrawork |
+| `Search` | Gemini 3 Flash | Fast semantic codebase retrieval | explorer, ultrawork, analyze |
 
 These are Amp's built-in tools that Sisyphus skills leverage:
 
@@ -14,7 +22,7 @@ These are Amp's built-in tools that Sisyphus skills leverage:
 |----------|---------|---------|
 | `oracle` | Expert reasoning, architecture review, debugging | prometheus, sisyphus, ultrawork, analyze |
 | `librarian` | External documentation, library research | prometheus, ultrawork |
-| `finder` | Semantic codebase search | explorer, ultrawork, analyze |
+| `Search` | Semantic codebase search | explorer, ultrawork, analyze |
 | `Task` | Spawn subagent for implementation | sisyphus |
 | `todo_write` | Track task progress | sisyphus |
 | `mermaid` | Create diagrams | analyze |
@@ -29,8 +37,8 @@ These are Amp's built-in tools that Sisyphus skills leverage:
 |----------------|-----------|-------------|
 | Oracle | Uses `oracle` tool | Built-in - no custom skill needed |
 | Librarian | Uses `librarian` tool | Built-in - no custom skill needed |
-| Explore | `explorer` | Uses `finder` + `Grep` + `glob` |
-| Prometheus | `prometheus` | Uses `oracle`, `librarian`, `finder` |
+| Explore | `explorer` | Uses `Search` + `Grep` + `glob` |
+| Prometheus | `prometheus` | Uses `oracle`, `librarian`, `Search` |
 | Momus | `momus` | Read-only reviewer |
 | Sisyphus Orchestrator | `sisyphus` | Uses `Task`, `oracle`, `librarian` |
 | Sisyphus Junior | N/A | Use `Task` tool directly |
@@ -62,7 +70,7 @@ These are Amp's built-in tools that Sisyphus skills leverage:
 | Task | `Task` | Built-in (for subagents) |
 | lsp_diagnostics | `get_diagnostics` | Built-in (via IDE) |
 | lsp_hover | N/A | Not exposed |
-| lsp_goto_definition | `finder` | Semantic search alternative |
+| lsp_goto_definition | `Search` | Semantic search alternative |
 | ast_grep_search | `Grep` + patterns | Use regex patterns |
 | ast_grep_replace | `edit_file` | Manual structural edits |
 
