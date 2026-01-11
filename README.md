@@ -13,7 +13,21 @@ Amp Sisyphus transforms Amp into a coordinated team of specialized agents that p
 - **9 Specialized Skills** - Integrated with Amp's built-in oracle, librarian, Search
 - **Lifecycle Hooks** - Auto-continue, session recovery, verification reminders
 - **Persistent State** - Survives session boundaries via wisdom accumulation
-- **Magic Keywords** - `/ultrawork`, `/analyze`, `/git-master` triggers
+- **Magic Keywords** - `/sisyphus`, `/prometheus`, `/ultrawork`, `/analyze` slash commands
+
+## Slash Commands
+
+After installing, these slash commands are available in Amp:
+
+| Command | Description |
+|---------|-------------|
+| `/sisyphus` | Orchestrate complex tasks with delegation |
+| `/prometheus` | Strategic planning with interview mode |
+| `/momus` | Critical plan review |
+| `/ultrawork` | Maximum performance parallel analysis |
+| `/analyze` | Deep module investigation |
+| `/git-master` | Clean git operations |
+| `/explorer` | Fast codebase search |
 
 ## Built-in Tool Integration
 
