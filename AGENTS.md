@@ -1,5 +1,38 @@
 # Agent Instructions
 
+This project is **Amp Sisyphus** - a multi-agent orchestration system for Amp.
+
+## Sisyphus Skills
+
+Available skills in this project:
+
+| Skill | Purpose | Trigger |
+|-------|---------|---------|
+| `sisyphus` | Main orchestrator - delegates, coordinates, verifies | Complex multi-step tasks |
+| `prometheus` | Strategic planner - interviews, creates plans | Planning phase |
+| `momus` | Critical reviewer - validates plans | Before implementation |
+| `explorer` | Fast codebase search - parallel execution | Quick searches |
+| `frontend-engineer` | UI/UX implementation specialist | Frontend tasks |
+| `doc-writer` | Documentation specialist | Docs, comments, READMEs |
+| `ultrawork` | Maximum performance mode | Comprehensive analysis |
+| `git-master` | Clean git operations | Commits, PRs |
+| `analyze` | Deep module investigation | Understanding code |
+
+## Sisyphus Workflow
+
+```
+User Request → Prometheus (Plan) → Momus (Review) → Sisyphus (Execute) → Done
+```
+
+## Sisyphus State
+
+- `.sisyphus/state.json` - Session state
+- `.sisyphus/wisdom.md` - Accumulated learnings
+- `.sisyphus/plans/` - Work plans
+- `.sisyphus/notepads/` - Execution notes
+
+## Issue Tracking
+
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
 
 ## Quick Reference

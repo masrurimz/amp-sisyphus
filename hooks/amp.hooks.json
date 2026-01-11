@@ -1,0 +1,68 @@
+{
+  "amp.hooks": [
+    {
+      "compatibilityDate": "2025-05-13",
+      "id": "sisyphus-ralph-loop",
+      "description": "The Sisyphean Promise: Continue working until all todos are complete",
+      "on": {
+        "event": "Stop"
+      },
+      "action": {
+        "type": "send-user-message",
+        "message": "🪨 SISYPHUS CHECK: Before stopping, verify:\n1. Run `todo_read` - are ALL items marked 'completed'?\n2. If incomplete items exist, continue working on them\n3. Only stop when the boulder reaches the top (all todos done)\n\nIf work remains, continue. The boulder rolls until it reaches the top."
+      }
+    },
+    {
+      "compatibilityDate": "2025-05-13",
+      "id": "sisyphus-session-start",
+      "description": "Load accumulated wisdom and state at session start",
+      "on": {
+        "event": "UserPromptSubmit"
+      },
+      "action": {
+        "type": "send-user-message",
+        "message": "📜 SISYPHUS SESSION START:\n- Check `.sisyphus/wisdom.md` for accumulated learnings\n- Check `.sisyphus/state.json` for in-progress work\n- Check `.sisyphus/plans/` for active plans\n- Resume where previous session left off if applicable"
+      }
+    },
+    {
+      "compatibilityDate": "2025-05-13",
+      "id": "sisyphus-plan-guard",
+      "description": "Ensure plans go through review before implementation",
+      "on": {
+        "event": "tool:pre-execute",
+        "tool": ["Task"],
+        "input.contains": "implement"
+      },
+      "action": {
+        "type": "send-user-message",
+        "message": "⚠️ PLAN CHECK: Before implementing, verify:\n1. Is there an approved plan in `.sisyphus/plans/`?\n2. Has Momus reviewed and approved it?\n3. If no plan exists, use Prometheus skill first to create one."
+      }
+    },
+    {
+      "compatibilityDate": "2025-05-13",
+      "id": "sisyphus-wisdom-capture",
+      "description": "Capture learnings before session ends",
+      "on": {
+        "event": "Stop"
+      },
+      "action": {
+        "type": "send-user-message",
+        "message": "📝 WISDOM CAPTURE: Before ending, update `.sisyphus/wisdom.md` with:\n- DISCOVERIES: What was learned\n- ISSUES: Problems encountered and solutions\n- DECISIONS: Key choices made and why\n- PATTERNS: Reusable approaches identified"
+      }
+    },
+    {
+      "compatibilityDate": "2025-05-13",
+      "id": "sisyphus-verification-reminder",
+      "description": "Remind to verify before marking tasks complete",
+      "on": {
+        "event": "tool:pre-execute",
+        "tool": ["todo_write"],
+        "input.contains": "completed"
+      },
+      "action": {
+        "type": "send-user-message",
+        "message": "✅ VERIFICATION CHECK: Before marking complete:\n1. Did the code compile/build successfully?\n2. Did tests pass?\n3. Was the change verified (manually or via diagnostics)?\n4. Is the acceptance criteria met?"
+      }
+    }
+  ]
+}
