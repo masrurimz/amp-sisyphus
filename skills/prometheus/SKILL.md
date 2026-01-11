@@ -211,22 +211,65 @@ Examples:
 
 ---
 
-## Oracle Consultation
+## Oracle Consultation (MANDATORY for Architecture)
 
-For architecture decisions, **consult the oracle skill** if available:
+**USE AMP'S BUILT-IN `oracle` TOOL** for architecture decisions:
+
+```
+oracle(
+  task: "Review authentication architecture and recommend approach",
+  context: "Building JWT-based auth for React SPA with Node backend",
+  files: ["src/auth/", "src/middleware/"]
+)
+```
+
+### When to Use Oracle
 
 1. **Before making architectural choices** - Ask oracle about patterns, trade-offs
 2. **When multiple valid approaches exist** - Get oracle's recommendation
 3. **For technology selection** - Validate choices with oracle
+4. **Complex debugging** - Oracle can analyze across files
+5. **Code review** - Oracle provides expert feedback
 
-Document oracle consultations in the plan:
+### Oracle Integration Pattern
+
+```
+# In your planning workflow:
+1. Gather requirements from user
+2. Use `finder` to understand existing codebase
+3. Call `oracle` with architecture question + relevant files
+4. Document oracle's recommendation in plan
+5. Proceed with informed decision
+```
+
+### Document Oracle Consultations
+
 ```markdown
 ### Oracle Consultation
 
 **Query**: Should we use REST or GraphQL for the API?
-**Oracle Response**: [Summary of guidance]
+**Files Analyzed**: src/api/, src/schema/
+**Oracle Response**: 
+- REST recommended for this use case because...
+- Trade-offs: GraphQL would provide X but adds complexity Y
 **Decision**: REST - [rationale based on oracle input]
 ```
+
+### Also Use Librarian for Research
+
+**USE AMP'S BUILT-IN `librarian` TOOL** for external documentation:
+
+```
+librarian(
+  query: "How does NextAuth.js handle JWT refresh tokens?",
+  context: "Planning authentication for Next.js app"
+)
+```
+
+Use librarian when:
+- Researching external libraries/frameworks
+- Finding best practices from documentation
+- Understanding third-party API patterns
 
 ---
 

@@ -6,19 +6,36 @@ Port of [oh-my-claude-sisyphus](https://github.com/Yeachan-Heo/oh-my-claude-sisy
 
 ## Component Mapping
 
+### Amp Built-in Tools (USE DIRECTLY)
+
+These are Amp's built-in tools that Sisyphus skills leverage:
+
+| Amp Tool | Purpose | Used By |
+|----------|---------|---------|
+| `oracle` | Expert reasoning, architecture review, debugging | prometheus, sisyphus, ultrawork, analyze |
+| `librarian` | External documentation, library research | prometheus, ultrawork |
+| `finder` | Semantic codebase search | explorer, ultrawork, analyze |
+| `Task` | Spawn subagent for implementation | sisyphus |
+| `todo_write` | Track task progress | sisyphus |
+| `mermaid` | Create diagrams | analyze |
+| `Grep` | Exact pattern matching | explorer |
+| `glob` | File pattern discovery | explorer |
+| `Read` | Read file contents | all |
+| `edit_file` / `create_file` | Modify files | frontend-engineer, doc-writer |
+
 ### Agents → Amp Skills
 
-| Sisyphus Agent | Amp Skill | Model Hint | Tool Restrictions |
-|----------------|-----------|------------|-------------------|
-| Oracle | `oracle` (built-in) | opus | Read-only - use Amp's oracle tool |
-| Librarian | `librarian` (built-in) | sonnet | Read-only - use Amp's librarian tool |
-| Explore | `explorer` | haiku | Grep, glob, Read |
-| Prometheus | `prometheus` | opus | Planning only, writes to `.sisyphus/plans/` |
-| Momus | `momus` | opus | Read-only reviewer |
-| Sisyphus Orchestrator | `sisyphus` | sonnet | Delegates via Task tool |
-| Sisyphus Junior | N/A | sonnet | Use Task tool directly |
-| Frontend Engineer | `frontend-engineer` | sonnet | Full file access |
-| Document Writer | `doc-writer` | haiku | Documentation focus |
+| Sisyphus Agent | Amp Skill | Integration |
+|----------------|-----------|-------------|
+| Oracle | Uses `oracle` tool | Built-in - no custom skill needed |
+| Librarian | Uses `librarian` tool | Built-in - no custom skill needed |
+| Explore | `explorer` | Uses `finder` + `Grep` + `glob` |
+| Prometheus | `prometheus` | Uses `oracle`, `librarian`, `finder` |
+| Momus | `momus` | Read-only reviewer |
+| Sisyphus Orchestrator | `sisyphus` | Uses `Task`, `oracle`, `librarian` |
+| Sisyphus Junior | N/A | Use `Task` tool directly |
+| Frontend Engineer | `frontend-engineer` | Full file access |
+| Document Writer | `doc-writer` | Documentation focus |
 
 ### Hooks Mapping
 

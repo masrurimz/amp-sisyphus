@@ -1,38 +1,21 @@
-# Ultrawork Skill
+---
+name: ultrawork
+description: Maximum performance mode using Amp's built-in oracle, librarian, and finder tools in parallel for comprehensive analysis. Activates when you need deep, multi-dimensional research across codebase and external docs.
+---
 
-Activates maximum performance mode with parallel agent execution.
+# Ultrawork: Maximum Performance Mode
 
-## Trigger
+Activates **parallel execution** of Amp's most powerful built-in tools for comprehensive analysis.
 
-Use when you need comprehensive, fast results across multiple dimensions:
-- Deep codebase analysis
-- Multi-faceted research
-- Parallel implementation tasks
+## Built-in Tools Used
 
-## Behavior
-
-When activated, Sisyphus will:
-
-1. **Spawn parallel research agents**:
-   - Explorer → Fast codebase search
-   - Librarian (built-in) → External documentation
-   - Oracle (built-in) → Architecture analysis
-
-2. **Run searches in parallel**:
-   - Multiple Grep calls simultaneously
-   - Multiple glob patterns at once
-   - Parallel file reads
-
-3. **Synthesize results**:
-   - Combine findings from all agents
-   - Prioritize by relevance
-   - Present unified view
-
-## Usage
-
-```
-/ultrawork "Analyze the authentication system and find all security vulnerabilities"
-```
+| Tool | Purpose | Strength |
+|------|---------|----------|
+| `oracle` | Deep reasoning, architecture review | Expert analysis, code review |
+| `librarian` | External documentation research | Library docs, best practices |
+| `finder` | Semantic codebase search | Conceptual code discovery |
+| `Grep` | Exact pattern matching | Fast, precise matches |
+| `glob` | File pattern discovery | Structure mapping |
 
 ## Parallel Execution Pattern
 
@@ -40,30 +23,142 @@ When activated, Sisyphus will:
 ┌─────────────────────────────────────────────────────┐
 │                    ULTRAWORK                         │
 ├─────────────────────────────────────────────────────┤
+│  Launch in parallel:                                 │
+│                                                      │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐          │
-│  │ Explorer │  │ Librarian│  │  Oracle  │          │
-│  │ (search) │  │ (docs)   │  │ (arch)   │          │
+│  │  finder  │  │ librarian│  │  oracle  │          │
+│  │(internal)│  │(external)│  │ (expert) │          │
 │  └────┬─────┘  └────┬─────┘  └────┬─────┘          │
 │       │             │             │                 │
 │       ▼             ▼             ▼                 │
-│  ┌─────────────────────────────────────┐           │
-│  │         SYNTHESIS LAYER              │           │
-│  │   Combine, dedupe, prioritize        │           │
-│  └─────────────────────────────────────┘           │
+│  Codebase      External       Architecture          │
+│  locations     best           recommendations       │
+│               practices                              │
+│       │             │             │                 │
+│       └─────────────┴─────────────┘                 │
 │                     │                               │
 │                     ▼                               │
-│            Unified Results                          │
+│           SYNTHESIS: Combined insights              │
 └─────────────────────────────────────────────────────┘
+```
+
+## Usage
+
+### Comprehensive Codebase Audit
+
+```
+# Step 1: Parallel discovery
+finder("Find all authentication-related code")
+finder("Find all API endpoints")  
+finder("Find all database queries")
+
+# Step 2: Expert analysis
+oracle(
+  task: "Audit this codebase for security vulnerabilities",
+  files: [discovered_files]
+)
+
+# Step 3: External research
+librarian(
+  query: "OWASP security best practices for Node.js APIs"
+)
+```
+
+### Deep Feature Analysis
+
+```
+# Parallel internal search
+finder("How does the payment processing work?")
+Grep("processPayment(", path="src")
+glob("**/payment*")
+
+# Parallel external research
+librarian(query: "Stripe API integration patterns")
+librarian(query: "Payment processing error handling best practices")
+
+# Expert synthesis
+oracle(
+  task: "Review payment implementation against best practices",
+  files: ["src/payments/"],
+  context: "Compare against Stripe patterns from librarian research"
+)
+```
+
+### Multi-Repository Research
+
+```
+# Use librarian for cross-repo analysis
+librarian(
+  query: "How does the Kubernetes scheduler handle pod affinity?",
+  context: "Comparing to our scheduler implementation"
+)
+
+librarian(
+  query: "How does React implement concurrent rendering?",
+  context: "Understanding patterns for our UI framework"
+)
+```
+
+## When to Use Ultrawork
+
+✅ **Use for:**
+- "Audit the entire codebase for X"
+- "Find all instances and best practices for Y"
+- "Research and analyze how we should implement Z"
+- "Compare our implementation against industry standards"
+- "Deep dive into module X with external context"
+
+❌ **Don't use for:**
+- Simple file searches (use finder directly)
+- Single-file edits (just edit it)
+- Tasks with clear, linear steps (use sisyphus)
+
+## Execution Checklist
+
+```
+1. [ ] Identify all dimensions to research
+2. [ ] Launch finder queries for internal code (parallel)
+3. [ ] Launch librarian queries for external docs (parallel)
+4. [ ] Collect results
+5. [ ] Call oracle for synthesis/review
+6. [ ] Combine into actionable insights
+```
+
+## Output Format
+
+```markdown
+## Ultrawork Analysis: [Topic]
+
+### Internal Findings (finder)
+- Found X in [files...]
+- Pattern Y appears in [locations...]
+
+### External Research (librarian)
+- Best practice: [summary]
+- Industry standard: [summary]
+- Relevant documentation: [links]
+
+### Expert Analysis (oracle)
+- Recommendation: [summary]
+- Trade-offs: [list]
+- Risks: [list]
+
+### Synthesized Recommendations
+1. [Action item with rationale]
+2. [Action item with rationale]
 ```
 
 ## Anti-Patterns
 
-❌ Don't use for simple, focused tasks
-❌ Don't use when sequential dependency exists
-❌ Don't spawn more than 5 parallel agents
+❌ Running tools sequentially when parallel is possible
+❌ Skipping oracle for complex decisions
+❌ Using Task for research (use librarian)
+❌ Guessing patterns (use finder for semantic search)
 
-## When to Use
+## The Ultrawork Mantra
 
-✅ "Audit the entire codebase for X"
-✅ "Find all instances of pattern Y across docs and code"
-✅ "Research best practices and find our current implementation"
+```
+All tools, all dimensions, all at once.
+finder finds, librarian researches, oracle advises.
+Synthesize into action.
+```

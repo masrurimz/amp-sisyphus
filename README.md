@@ -10,10 +10,22 @@ Amp Sisyphus transforms Amp into a coordinated team of specialized agents that p
 
 ## Features
 
-- **9 Specialized Skills** - Oracle, Librarian, Explorer, Prometheus, Momus, and more
+- **9 Specialized Skills** - Integrated with Amp's built-in oracle, librarian, finder
 - **Lifecycle Hooks** - Auto-continue, session recovery, verification reminders
 - **Persistent State** - Survives session boundaries via wisdom accumulation
 - **Magic Keywords** - `/ultrawork`, `/analyze`, `/git-master` triggers
+
+## Built-in Tool Integration
+
+Amp Sisyphus leverages Amp's powerful built-in tools:
+
+| Amp Tool | How Sisyphus Uses It |
+|----------|---------------------|
+| `oracle` | Architecture decisions, code review, debugging (prometheus, sisyphus, analyze) |
+| `librarian` | External documentation research (prometheus, ultrawork) |
+| `finder` | Semantic codebase search (explorer, analyze, ultrawork) |
+| `Task` | Spawn specialist subagents (sisyphus orchestrator) |
+| `mermaid` | Visualize architecture and flows (analyze) |
 
 ## Installation
 

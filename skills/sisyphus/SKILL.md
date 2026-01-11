@@ -142,7 +142,27 @@ pnpm run test       # if tests exist
 
 ## Delegation Protocol
 
-### Specialist Selection
+### Amp Built-in Tools (Use Directly)
+
+Before delegating to Task, consider using Amp's built-in tools directly:
+
+| Need | Built-in Tool | When to Use |
+|------|---------------|-------------|
+| Architecture advice | `oracle` | Complex decisions, code review, debugging |
+| External research | `librarian` | Library docs, best practices, third-party APIs |
+| Semantic code search | `finder` | Finding implementations by concept |
+| Exact pattern search | `Grep` | Known patterns, function calls |
+
+**Example: Before creating a Task for research**
+```
+# WRONG: Delegate research to Task
+Task: "Research how to implement OAuth2 in Express"
+
+# RIGHT: Use built-in librarian
+librarian(query: "OAuth2 implementation in Express.js with Passport")
+```
+
+### Specialist Selection (Via Task Tool)
 
 | Task Type | Delegate To | When |
 |-----------|-------------|------|
